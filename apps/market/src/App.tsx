@@ -1,4 +1,5 @@
 import React from 'react'
+import Catalog from './components/Catalog'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <li><code>npm run build</code> — сборка</li>
         <li><code>npm run preview</code> — предпросмотр сборки</li>
       </ul>
+      <Catalog />
     </div>
   )
 }
