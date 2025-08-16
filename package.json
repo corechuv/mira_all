@@ -1,0 +1,17 @@
+{
+  "name": "mira_all",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "api",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm -ws run build",
+    "build:api": "npm --workspace api run build",
+    "build:web": "npm --workspace apps/admin run build && npm --workspace apps/market run build",
+    "start:api": "npm --workspace api run start",
+    "dev:admin": "npm --workspace apps/admin run dev",
+    "dev:market": "npm --workspace apps/market run dev"
+  }
+}
