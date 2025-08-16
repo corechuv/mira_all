@@ -1,0 +1,15 @@
+$header-bg: #ffffff;
+$header-border: #e5e5e5;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  @include flex-center;
+  padding: 1rem;
+  background: $header-bg;
+  border-bottom: 1px solid $header-border;
+}

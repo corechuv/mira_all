@@ -1,0 +1,37 @@
+$gap: 1rem;
+
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+  padding: $gap;
+}
+
+@mixin grid-cols($cols) {
+  grid-template-columns: repeat($cols, 1fr);
+}
+
+.layout {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  gap: $gap;
+  @include grid-cols(1);
+
+  @media (min-width: 600px) {
+    @include grid-cols(2);
+  }
+
+  @media (min-width: 900px) {
+    @include grid-cols(3);
+  }
+
+  @media (min-width: 1200px) {
+    @include grid-cols(4);
+  }
+}
