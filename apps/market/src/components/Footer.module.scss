@@ -1,0 +1,14 @@
+$footer-bg: #f9f9f9;
+$footer-border: #e5e5e5;
+
+@mixin center {
+  text-align: center;
+}
+
+.footer {
+  @include center;
+  padding: 1rem;
+  background: $footer-bg;
+  border-top: 1px solid $footer-border;
+  font-size: 0.875rem;
+}

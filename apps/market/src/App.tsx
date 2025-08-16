@@ -1,17 +1,27 @@
-import React from 'react'
+import React from 'react';
+import Layout from './components/Layout';
+import ProductCard from './components/ProductCard';
+
+const products = [
+  { id: 1, title: 'Product 1', price: '$10', image: 'https://via.placeholder.com/300x200?text=1' },
+  { id: 2, title: 'Product 2', price: '$20', image: 'https://via.placeholder.com/300x200?text=2' },
+  { id: 3, title: 'Product 3', price: '$30', image: 'https://via.placeholder.com/300x200?text=3' },
+  { id: 4, title: 'Product 4', price: '$40', image: 'https://via.placeholder.com/300x200?text=4' },
+  { id: 5, title: 'Product 5', price: '$50', image: 'https://via.placeholder.com/300x200?text=5' }
+];
 
 export default function App() {
   return (
-    <div style={{ maxWidth: 720, margin: '40px auto', fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, sans-serif' }}>
-      <h1 style={{ marginBottom: 8 }}>Клиент маркетплейса — MIRA</h1>
-      <p style={{ lineHeight: 1.6 }}>
-        Пустой шаблон на Vite + React + TypeScript. Здесь можно строить UI.
-      </p>
-      <ul>
-        <li><code>npm run dev</code> — запуск dev-сервера</li>
-        <li><code>npm run build</code> — сборка</li>
-        <li><code>npm run preview</code> — предпросмотр сборки</li>
-      </ul>
-    </div>
-  )
+    <Layout>
+      {products.map((p) => (
+        <ProductCard
+          key={p.id}
+          image={p.image}
+          title={p.title}
+          price={p.price}
+          onAdd={() => console.log(`Add ${p.title}`)}
+        />
+      ))}
+    </Layout>
+  );
 }
